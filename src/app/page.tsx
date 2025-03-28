@@ -4,10 +4,12 @@ import WHope from "@/components/WHope";
 import React from "react";
 import Title from "@/components/Title";
 import Slider from "@/components/Slider";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div>
+      <Header />
       <Hero />
       <WHope />
       <Title text="¿Qué ofrecemos?" />
