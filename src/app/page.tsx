@@ -5,13 +5,16 @@ import React from "react";
 import Title from "@/components/Title";
 import Slider from "@/components/Slider";
 import Header from "@/components/Header";
+import Partners from "@/components/Partners";
 
 export default function Home() {
   return (
     <div>
       <Header />
       <Hero />
+      <Partners />
       <WHope />
+      
       <Title text="¿Qué ofrecemos?" />
       <SubtitleAndText
         mainStyle="mt-12"
