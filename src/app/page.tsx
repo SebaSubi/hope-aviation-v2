@@ -6,7 +6,66 @@ import Title from "@/components/Title";
 import Slider from "@/components/Slider";
 import Header from "@/components/Header";
 import Partners from "@/components/Partners";
-import PersonalDonation from "@/components/PersonalDonation";
+import DonationGrid from "@/components/DonationGrid"
+
+const allPeople = [
+  {
+    name: "Sebastián Pérez Lavooy",
+    title: "Private pilot student",
+    role: "Student",
+    about: "#",
+    donate: "https://donate.com/juan-perez",
+    imageUrl: "/ElianDonation.jpg"
+  },
+  {
+    name: "Fernando Cárdenas",
+    title: "Private pilot student",
+    role: "Student",
+    about: "#",
+    donate: "https://donate.com/maria-garcia",
+    imageUrl: "/ElianDonation.jpg"
+  },
+  {
+    name: "Milagros Amorosi",
+    title: "Commercial pilot student",
+    role: "Pilot",
+    about: "#",
+    donate: "https://donate.com/carlos-rodriguez",
+    imageUrl: "/ElianDonation.jpg"
+  },
+  {
+    name: "Elián Lehoux",
+    title: "Commercial pilot student",
+    role: "Pilot",
+    about: "#",
+    donate: "https://donate.com/ana-martinez",
+    imageUrl: "/ElianDonation.jpg"
+  },
+  {
+    name: "Iván Weimer",
+    title: "Flight instructor",
+    role: "Assigned to Fiji",
+    about: "",
+    donate: "https://donate.com/luis-sanchez",
+    imageUrl: "/ElianDonation.jpg"
+  },
+  {
+    name: "Sofía López",
+    title: "Commercial pilot student",
+    role: "Assigned to Zambia",
+    about: "#",
+    donate: "https://donate.com/sofia-lopez",
+    imageUrl: "/ElianDonation.jpg"
+  },
+  {
+    name: "Diego Fernández",
+    title: "Flight instructor",
+    role: "Assigned to Indonesia",
+    about: "#",
+    donate: "https://donate.com/diego-fernandez",
+    imageUrl: "/ElianDonation.jpg"
+  }
+];
 
 export default function Home() {
   return (
@@ -15,7 +74,7 @@ export default function Home() {
       <Hero />
       <Partners />
       <WHope />
-      <PersonalDonation />
+      <DonationGrid people={allPeople} />
       
       <Title text="¿Cómo Puedo Ayudar?" />
       <SubtitleAndText
