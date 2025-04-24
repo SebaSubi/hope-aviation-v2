@@ -7,7 +7,9 @@ import Slider from "@/components/Slider";
 import Header from "@/components/Header";
 import Partners from "@/components/Partners";
 import DonationGrid from "@/components/DonationGrid"
-
+import ComoAyudo from "@/components/ComoAyudo";
+import GeneralDonation from "@/components/GeneralDonation";
+import ProjectDonation from "@/components/ProjectDonation";
 const allPeople = [
   {
     name: "Sebastián Pérez Lavooy",
@@ -74,19 +76,10 @@ export default function Home() {
       <Hero />
       <Partners />
       <WHope />
+      <ComoAyudo />
+      <GeneralDonation />
+      <ProjectDonation />
       <DonationGrid people={allPeople} />
-      
-      <Title text="¿Cómo Puedo Ayudar?" />
-      <SubtitleAndText
-        mainStyle="mt-12"
-        title="Donaciones Generales"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-        src="/generalDonations.jpg"
-        alt="GeneralDonations"
-        imgHeight={450}
-        imgWidth={450}
-        imgPosition="Rigth"
-      />
       <SubtitleAndText
         title="Donación Misión"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
@@ -96,7 +89,6 @@ export default function Home() {
         imgWidth={450}
         imgPosition="Left"
       />
-      <Slider />
     </div>
   );
 }
