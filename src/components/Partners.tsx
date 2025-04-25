@@ -41,8 +41,8 @@ export default function Partners() {
             </div>
             <div className="bg-white/5 p-6 sm:p-10 border-2 border-transparent hover:border-white transition-all duration-300 rounded-bl-2xl">
               <img
-                alt="Laravel"
-                src="https://tailwindcss.com/plus-assets/img/logos/158x48/laravel-logo-white.svg"
+                alt="OCI"
+                src="/oci-full-logo.png"
                 width={158}
                 height={48}
                 className="max-h-12 w-full object-contain transition-transform duration-300 transform hover:scale-110"
@@ -50,8 +50,8 @@ export default function Partners() {
             </div>
             <div className="bg-white/5 p-6 sm:p-10 border-2 border-transparent hover:border-white transition-all duration-300">
               <img
-                alt="SavvyCal"
-                src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
+                alt="Pamas"
+                src="/pamas-logo.webp"
                 width={158}
                 height={48}
                 className="max-h-12 w-full object-contain transition-transform duration-300 transform hover:scale-110"
@@ -59,8 +59,8 @@ export default function Partners() {
             </div>
             <div className="bg-white/5 p-6 sm:p-10 border-2 border-transparent hover:border-white transition-all duration-300 rounded-br-2xl">
               <img
-                alt="Statamic"
-                src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg"
+                alt="Peru Projects"
+                src="/peru-projects-logo.webp"
                 width={158}
                 height={48}
                 className="max-h-12 w-full object-contain transition-transform duration-300 transform hover:scale-110"

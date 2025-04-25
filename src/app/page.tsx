@@ -17,7 +17,7 @@ const allPeople = [
     role: "Student",
     about: "#",
     donate: "https://donate.com/juan-perez",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "/SebaDonation.png"
   },
   {
     name: "Fernando Cárdenas",
@@ -25,7 +25,7 @@ const allPeople = [
     role: "Student",
     about: "#",
     donate: "https://donate.com/maria-garcia",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "/FerDonation.png"
   },
   {
     name: "Milagros Amorosi",
@@ -33,7 +33,7 @@ const allPeople = [
     role: "Pilot",
     about: "#",
     donate: "https://donate.com/carlos-rodriguez",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "/MiliDonation.jpg"
   },
   {
     name: "Elián Lehoux",
@@ -41,7 +41,7 @@ const allPeople = [
     role: "Pilot",
     about: "#",
     donate: "https://donate.com/ana-martinez",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "/ElianDonation.png"
   },
   {
     name: "Iván Weimer",
@@ -49,7 +49,7 @@ const allPeople = [
     role: "Assigned to Fiji",
     about: "",
     donate: "https://donate.com/luis-sanchez",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "/IvanDonation.png"
   },
   {
     name: "Sofía López",
@@ -57,7 +57,7 @@ const allPeople = [
     role: "Assigned to Zambia",
     about: "#",
     donate: "https://donate.com/sofia-lopez",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "https://images.unsplash.com/photo-1522262590532-a991489a0253?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     name: "Diego Fernández",
@@ -65,7 +65,7 @@ const allPeople = [
     role: "Assigned to Indonesia",
     about: "#",
     donate: "https://donate.com/diego-fernandez",
-    imageUrl: "/ElianDonation.jpg"
+    imageUrl: "/https://images.unsplash.com/photo-1623875208164-2126817fa692?q=80&w=3072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ];
 
@@ -80,15 +80,7 @@ export default function Home() {
       <GeneralDonation />
       <ProjectDonation />
       <DonationGrid people={allPeople} />
-      <SubtitleAndText
-        title="Donación Misión"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-        src="/misionDonation.jpg"
-        alt="MisionDonation"
-        imgHeight={450}
-        imgWidth={450}
-        imgPosition="Left"
-      />
+      
     </div>
   );
 }

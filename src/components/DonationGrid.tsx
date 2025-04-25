@@ -24,10 +24,8 @@ export default function DonationGrid({ people }: DonationGridProps) {
   return (
     <div className="bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Personal donations
-          </h2>
+        <div className="mx-auto max-w-3xl text-center">
+        <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Personal Donations</h2>
           <p className="mt-2 text-lg leading-8 text-gray-300">
             Meet our pilots and support their mission dreams.
           </p>
@@ -39,11 +37,11 @@ export default function DonationGrid({ people }: DonationGridProps) {
           {people.length > 6 && (
             <div className="mt-10 flex justify-center">
               <Link
-                href="/todos-los-pilotos"
-                className="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                href="/donate"
+                className="inline-flex items-center gap-x-2 rounded-md bg-white px-6 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-900 hover:text-white hover:border-white border-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
               >
-                Ver todos los pilotos
-                <ArrowRightIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+                See all pilots
+                <ArrowRightIcon className="-mr-0.5 h-6 w-6" aria-hidden="true" />
               </Link>
             </div>
           )}

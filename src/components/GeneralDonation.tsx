@@ -1,10 +1,15 @@
+'use client'
+
+import { ArrowRightIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
+
 export default function GeneralDonation() {
     return (
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
         <img
           alt=""
-          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-          className="absolute inset-0 -z-10 size-full object-cover"
+          src="https://plus.unsplash.com/premium_photo-1680263818119-0d87a45d08eb?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="absolute inset-0 -z-10 size-full object-cover opacity-15"
         />
         <div
           aria-hidden="true"
@@ -31,11 +36,22 @@ export default function GeneralDonation() {
           />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">General Donations</h2>
-            <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-              Donate straight to the organization to help us continue our work.
-            </p>
+          <div className="flex justify-between items-center">
+            <div className="max-w-2xl">
+              <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">General Donations</h2>
+              <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
+                Support our mission with a general donation to help us continue our work.
+              </p>
+            </div>
+            <div className="ml-16">
+              <Link
+                href="/donate"
+                className="inline-flex items-center gap-x-2 rounded-md bg-white px-6 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-900 hover:text-white hover:border-white border-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+              >
+                Donate Now
+                <ArrowRightIcon className="-mr-0.5 h-6 w-6" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
