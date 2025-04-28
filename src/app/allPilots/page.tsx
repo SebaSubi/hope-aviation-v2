@@ -1,10 +1,10 @@
 import AllPilotsList from "@/components/AllPilotsList";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 export default function AllPilots() {
     return (
         <div>
-            <Header />
+            <Navbar />
             <AllPilotsList />
         </div>
     )

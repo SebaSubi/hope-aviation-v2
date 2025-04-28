@@ -5,6 +5,7 @@ import PersonalDonation from './PersonalDonation'
 import Link from 'next/link'
 
 interface Person {
+  id: number;
   name: string;
   title: string;
   role: string;
@@ -37,7 +38,7 @@ export default function DonationGrid({ people }: DonationGridProps) {
           {people.length > 6 && (
             <div className="mt-10 flex justify-center">
               <Link
-                href="/donate"
+                href="/allPilots"
                 className="inline-flex items-center gap-x-2 rounded-md bg-white px-6 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-900 hover:text-white hover:border-white border-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
               >
                 See all pilots

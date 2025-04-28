@@ -141,15 +141,19 @@ export default function AllPilotsList() {
                     </div>
                     <div className="mt-6 flex border-t border-gray-900/5 pt-6">
                       <div className="relative flex items-center gap-x-4">
-                        <img alt={pilot.name} src={pilot.imageUrl} className="size-10 rounded-full bg-gray-50" />
-                        <div className="text-sm/6">
-                          <p className="font-semibold text-gray-900">
-                            <a href={pilot.donate}>
-                              <span className="absolute inset-0" />
-                              Apoyar a {pilot.name.split(' ')[0]}
-                            </a>
-                          </p>
-                          <p className="text-gray-600">{pilot.role}</p>
+                        <div className="flex gap-2">
+                          <a
+                            href={pilot.about}
+                            className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                          >
+                            Learn More
+                          </a>
+                          <a
+                            href={pilot.donate}
+                            className="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800"
+                          >
+                            Donate Now
+                          </a>
                         </div>
                       </div>
                     </div>

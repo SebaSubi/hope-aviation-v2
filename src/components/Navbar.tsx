@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Donate', href: '#' },
 ]
 
-export default function Header() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (

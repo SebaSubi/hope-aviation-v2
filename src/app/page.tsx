@@ -4,7 +4,7 @@ import WHope from "@/components/WHope";
 import React from "react";
 import Title from "@/components/Title";
 import Slider from "@/components/Slider";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Partners from "@/components/Partners";
 import DonationGrid from "@/components/DonationGrid"
 import ComoAyudo from "@/components/ComoAyudo";
@@ -12,6 +12,7 @@ import GeneralDonation from "@/components/GeneralDonation";
 import ProjectDonation from "@/components/ProjectDonation";
 const allPeople = [
   {
+    id: 1,
     name: "Sebastián Pérez Lavooy",
     title: "Private pilot student",
     role: "Student",
@@ -20,6 +21,7 @@ const allPeople = [
     imageUrl: "/SebaDonation.png"
   },
   {
+    id: 2,
     name: "Fernando Cárdenas",
     title: "Private pilot student",
     role: "Student",
@@ -28,6 +30,7 @@ const allPeople = [
     imageUrl: "/FerDonation.png"
   },
   {
+    id: 3,
     name: "Milagros Amorosi",
     title: "Commercial pilot student",
     role: "Pilot",
@@ -36,6 +39,7 @@ const allPeople = [
     imageUrl: "/MiliDonation.jpg"
   },
   {
+    id: 4,
     name: "Elián Lehoux",
     title: "Commercial pilot student",
     role: "Pilot",
@@ -44,6 +48,7 @@ const allPeople = [
     imageUrl: "/ElianDonation.png"
   },
   {
+    id: 5,
     name: "Iván Weimer",
     title: "Flight instructor",
     role: "Assigned to Fiji",
@@ -52,6 +57,7 @@ const allPeople = [
     imageUrl: "/IvanDonation.png"
   },
   {
+    id: 6,
     name: "Sofía López",
     title: "Commercial pilot student",
     role: "Assigned to Zambia",
@@ -60,6 +66,7 @@ const allPeople = [
     imageUrl: "https://images.unsplash.com/photo-1522262590532-a991489a0253?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
+    id: 7,
     name: "Diego Fernández",
     title: "Flight instructor",
     role: "Assigned to Indonesia",
@@ -72,7 +79,7 @@ const allPeople = [
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Navbar />
       <Hero />
       <Partners />
       <WHope />
