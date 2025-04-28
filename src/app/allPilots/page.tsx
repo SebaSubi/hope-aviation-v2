@@ -1,5 +1,5 @@
-import AllPilotsList from "@/components/AllPilotsList";
-import Navbar from "@/components/Navbar";
+import AllPilotsList from "@/components/pages/pilots/AllPilotsList";
+import Navbar from "@/components/layout/Navbar";
 
 export default function AllPilots() {
     return (

@@ -1,5 +1,5 @@
-import ProjectDetails from "@/components/ProjectDetails";
-import Navbar from "@/components/Navbar";
+import ProjectDetails from "@/components/pages/projects/ProjectDetails";
+import Navbar from "@/components/layout/Navbar";
 
 interface ProjectPageProps {
   params: {

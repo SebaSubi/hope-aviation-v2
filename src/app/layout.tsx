@@ -1,15 +1,28 @@
-import { montserrat } from "@/ui/fonts";
-import "./globals.css";
-import React from "react";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { Providers } from './providers'
+import MainNavbar from '@/components/layout/MainNavbar'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'Hope Aviation',
+  description: 'Plataforma de capacitación para pilotos humanitarios',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.className} antialiased`}>{children}</body>
+    <html lang="es">
+      <body className={inter.className}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
-  );
+  )
 }

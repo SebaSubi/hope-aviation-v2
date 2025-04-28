@@ -1,15 +1,15 @@
-import Hero from "@/components/Hero";
-import SubtitleAndText from "@/components/SubtitleAndText";
-import WHope from "@/components/WHope";
+import Hero from "@/components/pages/home/Hero";
+import SubtitleAndText from "@/components/pages/home/SubtitleAndText";
+import WHope from "@/components/pages/home/WHope";
 import React from "react";
-import Title from "@/components/Title";
-import Slider from "@/components/Slider";
-import Navbar from "@/components/Navbar";
-import Partners from "@/components/Partners";
-import DonationGrid from "@/components/DonationGrid"
-import ComoAyudo from "@/components/ComoAyudo";
-import GeneralDonation from "@/components/GeneralDonation";
-import ProjectDonation from "@/components/ProjectDonation";
+import Title from "@/components/pages/home/Title";
+import Slider from "@/components/pages/home/Slider";
+import Navbar from "@/components/layout/Navbar";
+import Partners from "@/components/pages/home/Partners";
+import DonationGrid from "@/components/pages/donate/DonationGrid"
+import ComoAyudo from "@/components/pages/home/ComoAyudo";
+import GeneralDonation from "@/components/pages/donate/GeneralDonation";
+import ProjectDonation from "@/components/pages/donate/ProjectDonation";
 const allPeople = [
   {
     id: 1,

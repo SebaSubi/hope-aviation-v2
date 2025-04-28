@@ -1,5 +1,5 @@
-import PilotDisplay from "@/components/PilotDisplay";
-import Navbar from "@/components/Navbar";
+import PilotDisplay from "@/components/pages/pilots/PilotDisplay";
+import Navbar from "@/components/layout/Navbar";
 
 const pilots = [
   {

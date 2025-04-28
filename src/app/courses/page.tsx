@@ -1,5 +1,5 @@
-import CoursesList from "@/components/CoursesList";
-import Navbar from "@/components/Navbar";
+import CoursesList from "@/components/dashboard/courses/CoursesList";
+import Navbar from "@/components/layout/Navbar";
 
 export default function Courses() {
   return (

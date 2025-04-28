@@ -1,5 +1,5 @@
-import DonatePage from "@/components/DonatePage";
-import Navbar from "@/components/Navbar";
+import DonatePage from "@/components/pages/donate/DonatePage";
+import Navbar from "@/components/layout/Navbar";
 
 export default function Donate() {
   return (
