@@ -1,15 +1,19 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 interface Course {
   id: string
-  name: string
+  title: string
   description: string
   progress: number
-  subjects: number
   imageUrl: string
+  instructor: string
+  lastUpdated: string
+  level: string
+  nextClass?: string
+  subjects: number
 }
 
 export default function MyCourses() {
@@ -20,99 +24,152 @@ export default function MyCourses() {
     setCourses([
       {
         id: '1',
-        name: 'Pilotaje Básico',
-        description:
-          'Aprende los fundamentos del pilotaje y los conceptos básicos de la aviación.',
-        progress: 60,
+        title: 'Humanitarian Pilot Training',
+        description: 'Curso avanzado de pilotaje humanitario con enfoque en operaciones de emergencia y ayuda humanitaria.',
+        progress: 75,
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1739371779873-32e0e3d224ee?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        instructor: 'Capt. María Rodríguez',
+        lastUpdated: '2024-04-28',
+        level: 'Avanzado',
+        nextClass: 'Emergency Procedures - 15:00',
         subjects: 8,
-        imageUrl: '/images/courses/pilotaje-basico.jpg',
       },
       {
         id: '2',
-        name: 'Navegación Avanzada',
-        description:
-          'Domina las técnicas avanzadas de navegación y el uso de sistemas modernos.',
+        title: 'Advanced Navigation',
+        description: 'Técnicas avanzadas de navegación aérea y uso de sistemas GPS modernos para vuelos de larga distancia.',
         progress: 30,
-        subjects: 12,
-        imageUrl: '/images/courses/navegacion-avanzada.jpg',
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1739371779873-32e0e3d224ee?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        instructor: 'Capt. Juan Pérez',
+        lastUpdated: '2024-04-27',
+        level: 'Intermedio',
+        nextClass: 'GPS Systems - 16:30',
+        subjects: 6,
       },
       {
         id: '3',
-        name: 'Manejo de Emergencias',
-        description:
-          'Prepárate para manejar situaciones de emergencia en vuelo con confianza.',
+        title: 'Emergency Response Operations',
+        description: 'Procedimientos y protocolos para operaciones de respuesta a emergencias en zonas de desastre.',
         progress: 15,
-        subjects: 6,
-        imageUrl: '/images/courses/emergencias.jpg',
+        imageUrl: 'https://plus.unsplash.com/premium_photo-1739371779873-32e0e3d224ee?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        instructor: 'Capt. Carlos Martínez',
+        lastUpdated: '2024-04-26',
+        level: 'Avanzado',
+        nextClass: 'Crisis Management - 14:00',
+        subjects: 10,
       },
     ])
   }, [])
 
   return (
     <div className="min-h-screen bg-gray-900">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mb-8 rounded-lg bg-gray-800 p-6 shadow-sm">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">
-            Mis Cursos
-          </h1>
-          <p className="mt-2 text-lg text-gray-300">
-            Gestiona y accede a tus cursos inscritos
-          </p>
+      {/* Header */}
+      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+        <img
+          alt=""
+          src="https://plus.unsplash.com/premium_photo-1681010317761-d0c42fdea9c0?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="absolute inset-0 -z-10 size-full object-cover opacity-25"
+        />
+        <div
+          aria-hidden="true"
+          className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="aspect-1097/845 w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+          />
         </div>
+        <div
+          aria-hidden="true"
+          className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="aspect-1097/845 w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+          />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Mis Cursos</h2>
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+              Continúa tu formación como piloto humanitario. Aquí encontrarás todos tus cursos activos y tu progreso en cada uno de ellos.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
-            <Link
+            <article
               key={course.id}
-              href={`/student/my-courses/${course.id}`}
-              className="group rounded-lg bg-gray-800 p-6 shadow-sm transition-all hover:shadow-md"
+              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
             >
-              <div className="aspect-w-16 aspect-h-9 mb-4">
-                <img
-                  src={course.imageUrl}
-                  alt={course.name}
-                  className="rounded-lg object-cover"
-                />
+              <img
+                src={course.imageUrl}
+                alt={course.title}
+                className="absolute inset-0 -z-10 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
+              <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+
+              <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                <div className="flex items-center gap-x-4">
+                  <div className="flex gap-x-2.5">
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                        course.instructor
+                      )}&background=0D8ABC&color=fff`}
+                      alt={course.instructor}
+                      className="h-6 w-6 flex-none rounded-full bg-white/10"
+                    />
+                    <span className="text-gray-300">{course.instructor}</span>
+                  </div>
+                  <time dateTime={course.lastUpdated} className="text-gray-300">
+                    {new Date(course.lastUpdated).toLocaleDateString('es-ES', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                </div>
               </div>
-              <h2 className="text-xl font-semibold text-white group-hover:text-blue-400">
-                {course.name}
-              </h2>
-              <p className="mt-2 text-gray-300 line-clamp-2">
-                {course.description}
-              </p>
+              <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
+                <Link href={`/student/my-courses/${course.id}`}>
+                  <span className="absolute inset-0" />
+                  {course.title}
+                </Link>
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-gray-300">{course.description}</p>
               <div className="mt-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-400">
-                    Progreso
-                  </span>
-                  <span className="text-sm font-medium text-white">
-                    {course.progress}%
-                  </span>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-300">Progreso: {course.progress}%</span>
+                  <Link
+                    href={`/student/my-courses/${course.id}`}
+                    className="text-blue-400 hover:text-blue-300"
+                  >
+                    Continuar
+                  </Link>
                 </div>
                 <div className="mt-2 h-2 w-full rounded-full bg-gray-700">
                   <div
-                    className="h-2 rounded-full bg-blue-600 transition-all duration-300"
+                    className="h-2 rounded-full bg-blue-500"
                     style={{ width: `${course.progress}%` }}
                   />
                 </div>
               </div>
-              <div className="mt-4 flex items-center text-sm text-gray-400">
-                <svg
-                  className="mr-2 h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-                {course.subjects} materias
-              </div>
-            </Link>
+              {course.nextClass && (
+                <p className="mt-4 text-sm text-gray-300">
+                  Próxima clase: {course.nextClass}
+                </p>
+              )}
+            </article>
           ))}
         </div>
       </div>

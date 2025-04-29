@@ -1,18 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 interface Course {
   id: string
-  name: string
+  title: string
   description: string
-  duration: string
-  level: 'beginner' | 'intermediate' | 'advanced'
-  instructor: string
-  rating: number
-  students: number
   imageUrl: string
+  instructor: string
+  level: string
+  duration: string
+  price: number
+  subjects: number
 }
 
 export default function AvailableCourses() {
@@ -23,173 +23,130 @@ export default function AvailableCourses() {
     setCourses([
       {
         id: '1',
-        name: 'Pilotaje Básico',
-        description:
-          'Aprende los fundamentos del pilotaje y los conceptos básicos de la aviación.',
-        duration: '8 semanas',
-        level: 'beginner',
-        instructor: 'Capt. Juan Pérez',
-        rating: 4.8,
-        students: 120,
-        imageUrl: '/images/courses/pilotaje-basico.jpg',
+        title: 'Humanitarian Pilot Training',
+        description: 'Curso avanzado de pilotaje humanitario con enfoque en operaciones de emergencia y ayuda humanitaria.',
+        imageUrl: '/images/courses/humanitarian.jpg',
+        instructor: 'Capt. María Rodríguez',
+        level: 'Avanzado',
+        duration: '6 meses',
+        price: 2999,
+        subjects: 8,
       },
       {
         id: '2',
-        name: 'Navegación Avanzada',
-        description:
-          'Domina las técnicas avanzadas de navegación y el uso de sistemas modernos.',
-        duration: '12 semanas',
-        level: 'intermediate',
-        instructor: 'Capt. María González',
-        rating: 4.9,
-        students: 85,
-        imageUrl: '/images/courses/navegacion-avanzada.jpg',
+        title: 'Advanced Navigation',
+        description: 'Técnicas avanzadas de navegación aérea y uso de sistemas GPS modernos para vuelos de larga distancia.',
+        imageUrl: '/images/courses/navigation.jpg',
+        instructor: 'Capt. Juan Pérez',
+        level: 'Intermedio',
+        duration: '4 meses',
+        price: 1999,
+        subjects: 6,
       },
       {
         id: '3',
-        name: 'Manejo de Emergencias',
-        description:
-          'Prepárate para manejar situaciones de emergencia en vuelo con confianza.',
-        duration: '6 semanas',
-        level: 'advanced',
-        instructor: 'Capt. Carlos Rodríguez',
-        rating: 4.7,
-        students: 65,
-        imageUrl: '/images/courses/emergencias.jpg',
+        title: 'Emergency Response Operations',
+        description: 'Procedimientos y protocolos para operaciones de respuesta a emergencias en zonas de desastre.',
+        imageUrl: '/images/courses/emergency.jpg',
+        instructor: 'Capt. Carlos Martínez',
+        level: 'Avanzado',
+        duration: '3 meses',
+        price: 2499,
+        subjects: 10,
       },
     ])
   }, [])
 
-  const getLevelText = (level: string) => {
-    switch (level) {
-      case 'beginner':
-        return 'Principiante'
-      case 'intermediate':
-        return 'Intermedio'
-      case 'advanced':
-        return 'Avanzado'
-      default:
-        return 'Nivel no especificado'
-    }
-  }
-
   return (
     <div className="min-h-screen bg-gray-900">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mb-8 rounded-lg bg-gray-800 p-6 shadow-sm">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">
-            Cursos Disponibles
-          </h1>
-          <p className="mt-2 text-lg text-gray-300">
-            Explora nuestra selección de cursos y comienza tu viaje en la aviación
-          </p>
+      {/* Header */}
+      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+        <img
+          alt=""
+          src="https://plus.unsplash.com/premium_photo-1681010317761-d0c42fdea9c0?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="absolute inset-0 -z-10 size-full object-cover opacity-25"
+        />
+        <div
+          aria-hidden="true"
+          className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="aspect-1097/845 w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+          />
         </div>
+        <div
+          aria-hidden="true"
+          className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="aspect-1097/845 w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+          />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Cursos Disponibles</h2>
+            <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+              Explora nuestra selección de cursos especializados en aviación humanitaria. Encuentra el programa perfecto para impulsar tu carrera como piloto humanitario.
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
-            <div
+            <article
               key={course.id}
-              className="rounded-lg bg-gray-800 shadow-sm transition-all hover:shadow-md"
+              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
             >
-              <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={course.imageUrl}
-                  alt={course.name}
-                  className="rounded-t-lg object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between">
-                  <span
-                    className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium ${
-                      course.level === 'beginner'
-                        ? 'bg-green-900 text-green-400'
-                        : course.level === 'intermediate'
-                        ? 'bg-yellow-900 text-yellow-400'
-                        : 'bg-red-900 text-red-400'
-                    }`}
-                  >
-                    {getLevelText(course.level)}
-                  </span>
-                  <div className="flex items-center text-sm text-gray-400">
-                    <svg
-                      className="mr-1 h-5 w-5 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    {course.rating}
-                  </div>
-                </div>
+              <img
+                src={course.imageUrl}
+                alt={course.title}
+                className="absolute inset-0 -z-10 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
+              <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
-                <h3 className="mt-4 text-xl font-semibold text-white">
-                  {course.name}
-                </h3>
-                <p className="mt-2 text-gray-300 line-clamp-2">
-                  {course.description}
-                </p>
-
-                <div className="mt-4 flex items-center text-sm text-gray-400">
-                  <svg
-                    className="mr-2 h-5 w-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
+                <div className="flex items-center gap-x-4">
+                  <div className="flex gap-x-2.5">
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                        course.instructor
+                      )}&background=0D8ABC&color=fff`}
+                      alt={course.instructor}
+                      className="h-6 w-6 flex-none rounded-full bg-white/10"
                     />
-                  </svg>
-                  {course.duration}
-                </div>
-
-                <div className="mt-4 flex items-center text-sm text-gray-400">
-                  <svg
-                    className="mr-2 h-5 w-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                  {course.instructor}
-                </div>
-
-                <div className="mt-4 flex items-center justify-between">
-                  <div className="flex items-center text-sm text-gray-400">
-                    <svg
-                      className="mr-2 h-5 w-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                    {course.students} estudiantes
+                    <span className="text-gray-300">{course.instructor}</span>
                   </div>
-                  <Link
-                    href={`/student/available-courses/${course.id}`}
-                    className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-500"
-                  >
-                    Ver Detalles
-                  </Link>
+                  <span className="text-gray-300">{course.level}</span>
                 </div>
               </div>
-            </div>
+              <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
+                <Link href={`/student/available-courses/${course.id}`}>
+                  <span className="absolute inset-0" />
+                  {course.title}
+                </Link>
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-gray-300">{course.description}</p>
+              <div className="mt-4">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-300">Duración: {course.duration}</span>
+                  <span className="text-blue-400">${course.price}</span>
+                </div>
+                <div className="mt-2 flex items-center gap-x-2 text-sm text-gray-300">
+                  <span>{course.subjects} materias</span>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </div>
