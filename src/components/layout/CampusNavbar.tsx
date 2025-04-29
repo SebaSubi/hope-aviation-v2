@@ -28,10 +28,10 @@ const professorNavigation = [
 ]
 
 const studentNavigation = [
-  { name: 'Dashboard', href: '/student/dashboard' },
-  { name: 'Cursos Disponibles', href: '/student/available-courses' },
-  { name: 'Mis Cursos', href: '/student/my-courses' },
-  { name: 'Progreso', href: '/student/progress' },
+  { name: 'Home', href: '/student/dashboard' },
+  { name: 'My Courses', href: '/student/my-courses' },
+  { name: 'Available Courses', href: '/student/available-courses' },
+  { name: 'My Profile', href: '/student/profile' },
 ]
 
 export default function CampusNavbar({ userType }: CampusNavbarProps) {
