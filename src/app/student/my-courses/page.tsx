@@ -8,139 +8,113 @@ interface Course {
   name: string
   description: string
   progress: number
-  subjects: Subject[]
-}
-
-interface Subject {
-  id: string
-  name: string
-  progress: number
-  grade: number
+  subjects: number
+  imageUrl: string
 }
 
 export default function MyCourses() {
   const [courses, setCourses] = useState<Course[]>([])
 
   useEffect(() => {
-    // TODO: Replace with actual API calls
+    // Datos de ejemplo
     setCourses([
       {
         id: '1',
-        name: 'Humanitarian Pilot Training',
-        description: 'Comprehensive training for humanitarian flight operations',
+        name: 'Pilotaje Básico',
+        description:
+          'Aprende los fundamentos del pilotaje y los conceptos básicos de la aviación.',
         progress: 60,
-        subjects: [
-          {
-            id: '1',
-            name: 'Basic Flight Operations',
-            progress: 100,
-            grade: 95,
-          },
-          {
-            id: '2',
-            name: 'Emergency Procedures',
-            progress: 80,
-            grade: 88,
-          },
-          {
-            id: '3',
-            name: 'Navigation Systems',
-            progress: 60,
-            grade: 0,
-          },
-          {
-            id: '4',
-            name: 'Aircraft Maintenance',
-            progress: 0,
-            grade: 0,
-          },
-          {
-            id: '5',
-            name: 'Crisis Management',
-            progress: 0,
-            grade: 0,
-          },
-        ],
+        subjects: 8,
+        imageUrl: '/images/courses/pilotaje-basico.jpg',
+      },
+      {
+        id: '2',
+        name: 'Navegación Avanzada',
+        description:
+          'Domina las técnicas avanzadas de navegación y el uso de sistemas modernos.',
+        progress: 30,
+        subjects: 12,
+        imageUrl: '/images/courses/navegacion-avanzada.jpg',
+      },
+      {
+        id: '3',
+        name: 'Manejo de Emergencias',
+        description:
+          'Prepárate para manejar situaciones de emergencia en vuelo con confianza.',
+        progress: 15,
+        subjects: 6,
+        imageUrl: '/images/courses/emergencias.jpg',
       },
     ])
   }, [])
 
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">My Courses</h1>
-        <p className="mt-2 text-gray-600">
-          View and manage your enrolled courses
-        </p>
-      </div>
+    <div className="min-h-screen bg-gray-900">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mb-8 rounded-lg bg-gray-800 p-6 shadow-sm">
+          <h1 className="text-3xl font-bold text-white sm:text-4xl">
+            Mis Cursos
+          </h1>
+          <p className="mt-2 text-lg text-gray-300">
+            Gestiona y accede a tus cursos inscritos
+          </p>
+        </div>
 
-      <div className="space-y-6">
-        {courses.map((course) => (
-          <div
-            key={course.id}
-            className="rounded-lg bg-white p-6 shadow"
-          >
-            <div className="flex items-start justify-between">
-              <div>
-                <h2 className="text-xl font-semibold text-gray-900">
-                  {course.name}
-                </h2>
-                <p className="mt-1 text-gray-600">{course.description}</p>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {courses.map((course) => (
+            <Link
+              key={course.id}
+              href={`/student/my-courses/${course.id}`}
+              className="group rounded-lg bg-gray-800 p-6 shadow-sm transition-all hover:shadow-md"
+            >
+              <div className="aspect-w-16 aspect-h-9 mb-4">
+                <img
+                  src={course.imageUrl}
+                  alt={course.name}
+                  className="rounded-lg object-cover"
+                />
               </div>
-              <div className="text-right">
-                <div className="text-2xl font-bold text-gray-900">
-                  {course.progress}%
+              <h2 className="text-xl font-semibold text-white group-hover:text-blue-400">
+                {course.name}
+              </h2>
+              <p className="mt-2 text-gray-300 line-clamp-2">
+                {course.description}
+              </p>
+              <div className="mt-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-gray-400">
+                    Progreso
+                  </span>
+                  <span className="text-sm font-medium text-white">
+                    {course.progress}%
+                  </span>
                 </div>
-                <div className="text-sm text-gray-500">Overall Progress</div>
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <h3 className="text-lg font-medium text-gray-900">Subjects</h3>
-              <div className="mt-4 space-y-4">
-                {course.subjects.map((subject) => (
+                <div className="mt-2 h-2 w-full rounded-full bg-gray-700">
                   <div
-                    key={subject.id}
-                    className="rounded-lg border border-gray-200 p-4"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h4 className="font-medium text-gray-900">
-                          {subject.name}
-                        </h4>
-                        <div className="mt-1 flex items-center">
-                          <div className="relative h-2 w-32 rounded-full bg-gray-200">
-                            <div
-                              className="absolute h-2 rounded-full bg-blue-600"
-                              style={{ width: `${subject.progress}%` }}
-                            />
-                          </div>
-                          <span className="ml-2 text-sm text-gray-500">
-                            {subject.progress}%
-                          </span>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-lg font-semibold text-gray-900">
-                          {subject.grade || '-'}%
-                        </div>
-                        <div className="text-sm text-gray-500">Grade</div>
-                      </div>
-                    </div>
-                    <div className="mt-4">
-                      <Link
-                        href={`/student/my-courses/${course.id}/subjects/${subject.id}`}
-                        className="inline-flex items-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500"
-                      >
-                        Enter Subject
-                      </Link>
-                    </div>
-                  </div>
-                ))}
+                    className="h-2 rounded-full bg-blue-600 transition-all duration-300"
+                    style={{ width: `${course.progress}%` }}
+                  />
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+              <div className="mt-4 flex items-center text-sm text-gray-400">
+                <svg
+                  className="mr-2 h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+                {course.subjects} materias
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   )
