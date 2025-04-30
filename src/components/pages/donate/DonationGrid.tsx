@@ -26,7 +26,11 @@ export default function DonationGrid({ people }: DonationGridProps) {
     <div className="bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Personal Donations</h2>
+          <h2 className="text-5xl font-semibold tracking-tight sm:text-7xl">
+            <span className="bg-gradient-to-r from-indigo-900 via-orange-500 to-gray-300 bg-clip-text text-transparent animate-gradient">
+              Personal Donations
+            </span>
+          </h2>
           <p className="mt-2 text-lg leading-8 text-gray-300">
             Meet our pilots and support their mission dreams.
           </p>

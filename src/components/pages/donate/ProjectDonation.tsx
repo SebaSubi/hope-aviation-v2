@@ -47,7 +47,9 @@ export default function ProjectDonation() {
               </Link>
             </div>
             <div className="text-right">
-              <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Project Donations</h2>
+              <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+                Project Donations
+              </h2>
               <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
                 Donate to a specific project to help us achieve our goals.
               </p>

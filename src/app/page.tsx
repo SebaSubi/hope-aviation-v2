@@ -10,6 +10,7 @@ import DonationGrid from "@/components/pages/donate/DonationGrid"
 import ComoAyudo from "@/components/pages/home/ComoAyudo";
 import GeneralDonation from "@/components/pages/donate/GeneralDonation";
 import ProjectDonation from "@/components/pages/donate/ProjectDonation";
+
 const allPeople = [
   {
     id: 1,
@@ -87,7 +88,6 @@ export default function Home() {
       <GeneralDonation />
       <ProjectDonation />
       <DonationGrid people={allPeople} />
-      
     </div>
   );
 }

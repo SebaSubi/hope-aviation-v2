@@ -38,7 +38,9 @@ export default function GeneralDonation() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="max-w-2xl">
-              <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">General Donations</h2>
+              <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
+                General Donations
+              </h2>
               <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
                 Support our mission with a general donation to help us continue our work.
               </p>

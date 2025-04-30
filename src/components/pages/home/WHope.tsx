@@ -1,14 +1,50 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { useEffect, useState } from 'react'
 
 const stats = [
-  { name: 'Partner projects', value: '12' },
-  { name: 'Students worldwide', value: '300+' },
-  { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
+  { name: 'Partner projects', value: 12, suffix: '' },
+  { name: 'Students worldwide', value: 300, suffix: '+' },
+  { name: 'Hours per week', value: 40, suffix: '' },
+  { name: 'Paid time off', value: 0, suffix: 'Unlimited' },
 ]
 
 export default function WHope() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+  const [counters, setCounters] = useState(stats.map(() => 0))
+
+  useEffect(() => {
+    if (inView) {
+      const duration = 2000 // 2 segundos
+      const steps = 60
+      const intervals = stats.map((stat, index) => {
+        const increment = stat.value / steps
+        let current = 0
+
+        return setInterval(() => {
+          current += increment
+          if (current >= stat.value) {
+            current = stat.value
+          }
+          setCounters(prev => {
+            const newCounters = [...prev]
+            newCounters[index] = Math.floor(current)
+            return newCounters
+          })
+        }, duration / steps)
+      })
+
+      return () => intervals.forEach(interval => clearInterval(interval))
+    }
+  }, [inView])
+
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <div ref={ref} className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
       <img
         alt=""
         src="/diversosCursos.jpg"
@@ -28,19 +64,38 @@ export default function WHope() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Who are we?</h2>
-          <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl font-semibold tracking-tight text-white sm:text-7xl"
+          >
+            Who are we?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8"
+          >
             The first integral program to prepare volunteers and pilots for humanitarian projects with aircrafts.
-          </p>
+          </motion.p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          
           <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.name} className="flex flex-col-reverse gap-1">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col-reverse gap-1"
+              >
                 <dt className="text-base/7 text-gray-300">{stat.name}</dt>
-                <dd className="text-4xl font-semibold tracking-tight text-white">{stat.value}</dd>
-              </div>
+                <dd className="text-4xl font-semibold tracking-tight text-white">
+                  {stat.name === 'Paid time off' ? 'Unlimited' : `${counters[index].toLocaleString()}${stat.suffix}`}
+                </dd>
+              </motion.div>
             ))}
           </dl>
         </div>
